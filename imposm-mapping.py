@@ -45,10 +45,10 @@ from imposm.mapping import (
 # set_default_name_type(LocalizedName(['name:en', 'int_name', 'name']))
 
 db_conf = Options(
-    # db='osm',
-    host='localhost',
+    db='eox_osm',
+    host='10.0.2.15',
     port=5432,
-    user='osm',
+    user='eox_maps',
     password='osm',
     sslmode='allow',
     prefix='osm_new_',
