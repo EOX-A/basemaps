@@ -1113,6 +1113,61 @@ styles = {
       'pedestrian_ol_clr': '193 181 157',
       'display_buildings':0
    },
+   'eox':{
+      'pedestrian_clr': '250 250 245',
+      'forest_clr': "203 216 195",
+      'industrial_clr': "209 208 205",
+      'education_clr': "222 210 172",
+      'hospital_clr': "229 198 195",
+      'residential_clr': "242 239 233",
+      'land_clr': "242 239 233",
+      'park_clr': '181 210 156',
+      'ocean_clr': '153 179 204',
+      'waterarea_clr': '153 179 204',
+      'river_clr': '153 179 204',
+      'stream_clr': '153 179 204',
+      'canal_clr': '153 179 204',
+
+      'motorway_clr': '250 250 245',
+      'trunk_clr': '250 250 245',
+      'primary_clr': '250 250 245',
+      'secondary_clr': '250 250 245',
+      'tertiary_clr': '250 250 245',
+      'other_clr': '250 250 245',
+      'pedestrian_clr': '250 250 245',
+      'display_buildings':0,
+      'motorway_ol_clr': '100 100 100',
+      'trunk_ol_clr': '100 100 100',
+      'primary_ol_clr': '100 100 100',
+      'secondary_ol_clr': '100 100 100',
+      'tertiary_ol_clr': '100 100 100',
+      'other_ol_clr': '100 100 100',
+      'pedestrian_ol_clr': '100 100 100',
+#      'display_capitals': 1,      
+      'display_cities': {
+         0:0,
+         8:1,
+         16:0
+      },
+      'display_towns': {
+         0:0,
+         12:1,
+         16:0
+      },
+      'display_villages': {
+         0:0,
+         12:1,
+         16:0
+      },
+      'country_lbl_ol_clr': "240 240 240",
+      'border_2_clr': {
+         0:'"#EEEEEE"'
+      },
+      'border_2_inner_clr': {
+         0:'"#222222"',
+         4:'"#222222"'
+      },
+    },
    'michelin':{
       'motorway_clr': '228 24 24',
       'trunk_clr': '228 24 24',
@@ -1296,7 +1351,7 @@ styles = {
          9: '"way from (select osm_id,way,OSM_NAME_COLUMN as name,ref,highway as type, 0 as tunnel, 0 as bridge from OSM_PREFIX_line where highway in (\'motorway\',\'trunk\',\'primary\',\'secondary\',\'motorway_link\',\'trunk_link\',\'primary_link\')order by z_order asc, st_length(way) asc) as foo using unique osm_id using srid=OSM_SRID"',
          10:'"way from (select osm_id,way,OSM_NAME_COLUMN as name,ref,highway as type, 0 as tunnel, 0 as bridge from OSM_PREFIX_line where highway in (\'motorway\',\'trunk\',\'primary\',\'secondary\',\'tertiary\',\'motorway_link\',\'trunk_link\',\'primary_link\',\'secondary_link\',\'tertiary_link\') order by z_order asc, st_length(way) asc) as foo using unique osm_id using srid=OSM_SRID"',
          11:'"way from (select osm_id,way,OSM_NAME_COLUMN as name,ref,highway as type, 0 as tunnel, 0 as bridge from OSM_PREFIX_line where highway is not null order by z_order asc, st_length(way) asc) as foo using unique osm_id using srid=OSM_SRID"',
-         14:'"way from (select osm_id,way,OSM_NAME_COLUMN as name,ref,highway||(case when bridge=\'yes\' then 1 else 0 end)||(case when tunnel=\'yes\' then 1 else 0 end) as type from OSM_PREFIX_line where highway is not null order by z_order asc, st_length(way) asc) as foo using unique osm_id using srid=OSM_SRID"',
+         14:'"way from (select osm_id,way,OSM_NAME_COLUMN as name,ref,highway as type, (case when tunnel=\'yes\' then 1 else 0 end) as tunnel,(case when bridge=\'yes\' then 1 else 0 end) as bridge from OSM_PREFIX_line where highway is not null order by z_order asc, st_length(way) asc) as foo using unique osm_id using srid=OSM_SRID"',
       },
       'roads_shield_data': {
            0:'"geometry from (select osm_id,geometry,OSM_NAME_COLUMN,ref,(regexp_matches(ref, \'([a-z,A-Z]+)? ?([0-9]+)[^;]*\', \'g\'))[1] as shield_class,(regexp_matches(ref, \'([a-z,A-Z]+)? ?([0-9]+)[^;]*\', \'g\'))[2] as shield_no,type,tunnel,bridge from OSM_PREFIX_roads_gen0 order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=OSM_SRID"',
@@ -1321,6 +1376,7 @@ style_aliases = {
 
    # a style resembling the google-maps theme
    "google":"default,outlined,usshields,google",
+   "eox":"outlined,eox",
 
    # same style as above, but using data coming from an osm2pgsql schema rather than imposm
    "googleosm2pgsql":"default,outlined,google,osm2pgsql",
