@@ -1156,8 +1156,12 @@ styles = {
       },
       'display_villages': {
          0:0,
-         12:1,
+         14:1,
          16:0
+      },
+      'display_hamlets': {
+         0:0,
+         14:1
       },
       'country_lbl_ol_clr': "240 240 240",
       'border_2_clr': {
@@ -1167,6 +1171,85 @@ styles = {
          0:'"#222222"',
          4:'"#222222"'
       },
+      'display_countries': {
+         0:0
+      },
+      'display_border_2': {
+         0:0,
+         4:1
+      },
+      'display_border_2_outer': {
+         0:0,
+         4:1
+      },
+      'border_2_width': {
+         0:'0',
+         4:'2.5',
+         6:'3.75',
+         8:'5'
+      },
+      'border_2_inner_width': {
+         0:'0',
+         4:'0.5',
+         6:'0.75',
+         8:'1'
+      },
+      'display_highways': {
+         0:0,
+         7:1
+      },
+      'display_motorways': {
+         0:0,
+         7:1
+      },
+      'display_motorway_links': {
+         0:0,
+         7:1
+      },
+      'display_trunks': {
+         0:0,
+         7:1
+      },
+      'display_trunk_links': {
+         0:0,
+         7:1
+      },
+      'display_primaries': {
+         0:0,
+         10:1
+      },
+      'display_secondaries': {
+         0:0,
+         12:1
+      },
+      'display_tertiaries': {
+         0:0,
+         14:1
+      },
+      'display_other_roads': {
+         0:0,
+         14:1
+      },
+      'display_pedestrian': {
+         0:0,
+         14:1
+      },
+      'display_tracks': {
+         0:0,
+         14:1
+      },
+      'display_footways': {
+         0:0,
+         14:1
+      },
+      'display_railways': {
+         0:0,
+         10:1
+      },
+      'display_aeroways': {
+         0:0,
+         10:1
+      }
     },
    'michelin':{
       'motorway_clr': '228 24 24',

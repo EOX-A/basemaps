@@ -40,12 +40,6 @@ LAYER
      "init=epsg:4326"
    END
    DATA "data/boundaries.shp"
-   CLASS
-      STYLE
-         WIDTH 0.5
-         COLOR "#222222"
-      END
-   END
 END
 LAYER
  STATUS ON
@@ -87,12 +81,6 @@ LAYER
      "init=epsg:4326"
    END
    DATA "data/boundaries.shp"
-   CLASS
-      STYLE
-         WIDTH 0.5
-         COLOR "#222222"
-      END
-   END
 END
 LAYER
  STATUS ON
@@ -134,12 +122,6 @@ LAYER
      "init=epsg:4326"
    END
    DATA "data/boundaries.shp"
-   CLASS
-      STYLE
-         WIDTH 0.5
-         COLOR "#222222"
-      END
-   END
 END
 LAYER
  STATUS ON
@@ -169,25 +151,6 @@ STYLE END
    POSITION cc
   END
  END
- CLASS
-STYLE END
-  EXPRESSION 'country'
-  LABEL
-   FONT scb
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 8
-   COLOR 100 100 100
-   OUTLINECOLOR 240 240 240
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   BUFFER 4
-   PARTIALS FALSE
-   POSITION cc
-  END
- END
 END
 LAYER
    GROUP "default"
@@ -200,12 +163,6 @@ LAYER
      "init=epsg:4326"
    END
    DATA "data/boundaries.shp"
-   CLASS
-      STYLE
-         WIDTH 0.5
-         COLOR "#222222"
-      END
-   END
 END
 LAYER
  STATUS ON
@@ -219,25 +176,6 @@ LAYER
  DATA "geometry from (select * from osm_new_places where type in ('country','continent','city') and name is not NULL order by population asc nulls first) as foo using unique osm_id using srid=3857"
  LABELITEM 'name'
  CLASSITEM 'type'
- CLASS
-STYLE END
-  EXPRESSION 'country'
-  LABEL
-   FONT scb
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 8
-   COLOR 100 100 100
-   OUTLINECOLOR 240 240 240
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   BUFFER 4
-   PARTIALS FALSE
-   POSITION cc
-  END
- END
 END
 LAYER
    GROUP "default"
@@ -251,6 +189,11 @@ LAYER
    END
    DATA "data/boundaries.shp"
    CLASS
+      STYLE
+         WIDTH 2.5
+         COLOR "#EEEEEE"
+         OPACITY 50
+      END
       STYLE
          WIDTH 0.5
          COLOR "#222222"
@@ -269,54 +212,6 @@ LAYER
  DATA "geometry from (select * from osm_new_places where type in ('country','continent','city') and name is not NULL order by population asc nulls first) as foo using unique osm_id using srid=3857"
  LABELITEM 'name'
  CLASSITEM 'type'
- CLASS
-STYLE END
-  EXPRESSION 'country'
-  LABEL
-   FONT scb
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 8
-   COLOR 100 100 100
-   OUTLINECOLOR 240 240 240
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   BUFFER 4
-   PARTIALS FALSE
-   POSITION cc
-  END
- END
-END
-LAYER
-    GROUP "default"
-    STATUS ON
-    TYPE LINE
-    MINSCALEDENOM 10400256
-    MAXSCALEDENOM 20800512
-    NAME "roads5"
-    CONNECTIONTYPE postgis
-    CONNECTION "host=10.250.10.20 dbname=eox_osm user=eox_maps password=osm port=5432"
-    DATA "geometry from (select osm_id,geometry,name as name,ref,type from osm_new_roads_gen0 where type in ('trunk','motorway') order by z_order asc) as foo using unique osm_id using srid=3857"
-    LABELITEM "name"
-    CLASSITEM "type"
-    CLASS
-        EXPRESSION "motorway"
-        TEXT ("[ref]")
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION "trunk"
-        TEXT ("[ref]")
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
 END
 LAYER
    GROUP "default"
@@ -330,6 +225,11 @@ LAYER
    END
    DATA "data/boundaries.shp"
    CLASS
+      STYLE
+         WIDTH 2.5
+         COLOR "#EEEEEE"
+         OPACITY 50
+      END
       STYLE
          WIDTH 0.5
          COLOR "#222222"
@@ -348,54 +248,6 @@ LAYER
  DATA "geometry from (select * from osm_new_places where type in ('country','continent','city') and name is not NULL order by population asc nulls first) as foo using unique osm_id using srid=3857"
  LABELITEM 'name'
  CLASSITEM 'type'
- CLASS
-STYLE END
-  EXPRESSION 'country'
-  LABEL
-   FONT scb
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 8
-   COLOR 100 100 100
-   OUTLINECOLOR 240 240 240
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   BUFFER 4
-   PARTIALS FALSE
-   POSITION cc
-  END
- END
-END
-LAYER
-    GROUP "default"
-    STATUS ON
-    TYPE LINE
-    MINSCALEDENOM 5200128
-    MAXSCALEDENOM 10400256
-    NAME "roads6"
-    CONNECTIONTYPE postgis
-    CONNECTION "host=10.250.10.20 dbname=eox_osm user=eox_maps password=osm port=5432"
-    DATA "geometry from (select osm_id,geometry,name as name,ref,type from osm_new_roads_gen0 where type in ('trunk','motorway') order by z_order asc) as foo using unique osm_id using srid=3857"
-    LABELITEM "name"
-    CLASSITEM "type"
-    CLASS
-        EXPRESSION "motorway"
-        TEXT ("[ref]")
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION "trunk"
-        TEXT ("[ref]")
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
 END
 LAYER
    GROUP "default"
@@ -410,12 +262,12 @@ LAYER
    DATA "data/boundaries.shp"
    CLASS
       STYLE
-         WIDTH 5
+         WIDTH 3.75
          COLOR "#EEEEEE"
          OPACITY 50
       END
       STYLE
-         WIDTH 0.5
+         WIDTH 0.75
          COLOR "#222222"
       END
    END
@@ -432,25 +284,6 @@ LAYER
  DATA "geometry from (select * from osm_new_places where type in ('country','continent','city') and name is not NULL order by population asc nulls first) as foo using unique osm_id using srid=3857"
  LABELITEM 'name'
  CLASSITEM 'type'
- CLASS
-STYLE END
-  EXPRESSION 'country'
-  LABEL
-   FONT scb
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 8
-   COLOR 100 100 100
-   OUTLINECOLOR 240 240 240
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   BUFFER 4
-   PARTIALS FALSE
-   POSITION cc
-  END
- END
 END
 LAYER
     GROUP "default"
@@ -478,8 +311,32 @@ LAYER
         END
     END
     CLASS
+        EXPRESSION "motorway_link"
+        STYLE
+           WIDTH 0.5
+           OUTLINEWIDTH 0.5
+           OUTLINECOLOR 100 100 100
+        END
+        STYLE
+            WIDTH 0.5
+            COLOR 250 250 245
+        END
+    END
+    CLASS
         EXPRESSION "trunk"
         TEXT ("[ref]")
+        STYLE
+           WIDTH 0.5
+           OUTLINEWIDTH 0.5
+           OUTLINECOLOR 100 100 100
+        END
+        STYLE
+            WIDTH 0.5
+            COLOR 250 250 245
+        END
+    END
+    CLASS
+        EXPRESSION "trunk_link"
         STYLE
            WIDTH 0.5
            OUTLINEWIDTH 0.5
@@ -504,12 +361,12 @@ LAYER
    DATA "data/boundaries.shp"
    CLASS
       STYLE
-         WIDTH 5
+         WIDTH 3.75
          COLOR "#EEEEEE"
          OPACITY 50
       END
       STYLE
-         WIDTH 1
+         WIDTH 0.75
          COLOR "#222222"
       END
    END
@@ -526,54 +383,6 @@ LAYER
  DATA "geometry from (select * from osm_new_places where type in ('country','continent','city') and name is not NULL order by population asc nulls first) as foo using unique osm_id using srid=3857"
  LABELITEM 'name'
  CLASSITEM 'type'
- CLASS
-STYLE END
-  EXPRESSION 'country'
-  LABEL
-   FONT scb
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 8
-   COLOR 100 100 100
-   OUTLINECOLOR 240 240 240
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   BUFFER 4
-   PARTIALS FALSE
-   POSITION cc
-  END
- END
-END
-LAYER
-    GROUP "default"
-    STATUS ON
-    CONNECTIONTYPE POSTGIS
-    CONNECTION "host=10.250.10.20 dbname=eox_osm user=eox_maps password=osm port=5432"
-    MINSCALEDENOM 1300032
-    MAXSCALEDENOM 2600064
-    TYPE LINE
-    NAME "railways8"
-    DATA "geometry from (select geometry, osm_id, tunnel from osm_new_railways_gen1 where type='rail') as foo using unique osm_id using srid=3857"
-    CLASS
-      EXPRESSION ([tunnel]=0)
-        STYLE
-         WIDTH 0.5
-         COLOR "#777777"
-         PATTERN 2 2 END
-         LINECAP BUTT
-        END
-    END
-    CLASS
-        STYLE
-         WIDTH 0.5
-         COLOR "#777777"
-         PATTERN 2 2 END
-         OPACITY 40
-         LINECAP BUTT
-        END
-    END
 END
 LAYER
     GROUP "default"
@@ -588,13 +397,6 @@ LAYER
     LABELITEM "name"
     CLASSITEM "type"
     CLASS
-        EXPRESSION /primary/
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
-    CLASS
         EXPRESSION "motorway"
         TEXT ("[ref]")
         STYLE
@@ -608,6 +410,18 @@ LAYER
         END
     END
     CLASS
+        EXPRESSION "motorway_link"
+        STYLE
+           WIDTH 0.5
+           OUTLINEWIDTH 0.5
+           OUTLINECOLOR 100 100 100
+        END
+        STYLE
+            WIDTH 0.5
+            COLOR 250 250 245
+        END
+    END
+    CLASS
         EXPRESSION "trunk"
         TEXT ("[ref]")
         STYLE
@@ -617,6 +431,18 @@ LAYER
         END
         STYLE
             WIDTH 1
+            COLOR 250 250 245
+        END
+    END
+    CLASS
+        EXPRESSION "trunk_link"
+        STYLE
+           WIDTH 0.5
+           OUTLINEWIDTH 0.5
+           OUTLINECOLOR 100 100 100
+        END
+        STYLE
+            WIDTH 0.5
             COLOR 250 250 245
         END
     END
@@ -685,35 +511,6 @@ END
 LAYER
     GROUP "default"
     STATUS ON
-    CONNECTIONTYPE POSTGIS
-    CONNECTION "host=10.250.10.20 dbname=eox_osm user=eox_maps password=osm port=5432"
-    MINSCALEDENOM 650016
-    MAXSCALEDENOM 1300032
-    TYPE LINE
-    NAME "railways9"
-    DATA "geometry from (select geometry, osm_id, tunnel from osm_new_railways_gen1 where type='rail') as foo using unique osm_id using srid=3857"
-    CLASS
-      EXPRESSION ([tunnel]=0)
-        STYLE
-         WIDTH 0.5
-         COLOR "#777777"
-         PATTERN 2 2 END
-         LINECAP BUTT
-        END
-    END
-    CLASS
-        STYLE
-         WIDTH 0.5
-         COLOR "#777777"
-         PATTERN 2 2 END
-         OPACITY 40
-         LINECAP BUTT
-        END
-    END
-END
-LAYER
-    GROUP "default"
-    STATUS ON
     TYPE LINE
     MINSCALEDENOM 650016
     MAXSCALEDENOM 1300032
@@ -723,25 +520,6 @@ LAYER
     DATA "geometry from (select osm_id,geometry,name as name,ref,type from osm_new_roads_gen1 where type in ('secondary','trunk','motorway','primary') order by z_order asc) as foo using unique osm_id using srid=3857"
     LABELITEM "name"
     CLASSITEM "type"
-    CLASS
-        EXPRESSION /secondary/
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION /primary/
-        STYLE
-           WIDTH 0.75
-           OUTLINEWIDTH 0.5
-           OUTLINECOLOR 100 100 100
-        END
-        STYLE
-            WIDTH 0.75
-            COLOR 250 250 245
-        END
-    END
     CLASS
         EXPRESSION "motorway"
         TEXT ("[ref]")
@@ -895,25 +673,6 @@ LAYER
     DATA "geometry from (select osm_id,geometry,name as name,ref,type from osm_new_roads_gen1 ) as foo using unique osm_id using srid=3857"
     LABELITEM "name"
     CLASSITEM "type"
-    CLASS
-        EXPRESSION /tertiary/
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION /secondary/
-        STYLE
-           WIDTH 0.75
-           OUTLINEWIDTH 0.5
-           OUTLINECOLOR 100 100 100
-        END
-        STYLE
-            WIDTH 0.75
-            COLOR 250 250 245
-        END
-    END
     CLASS
         EXPRESSION /primary/
         STYLE
@@ -1135,32 +894,6 @@ LAYER
     LABELITEM "name"
     CLASSITEM "type"
     CLASS
-        EXPRESSION /unclassified|residential|service|road|living_street/
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION /tertiary/
-        STYLE
-            WIDTH 0.75
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION /secondary/
-        STYLE
-           WIDTH 1
-           OUTLINEWIDTH 0.5
-           OUTLINECOLOR 100 100 100
-        END
-        STYLE
-            WIDTH 1
-            COLOR 250 250 245
-        END
-    END
-    CLASS
         EXPRESSION /primary/
         STYLE
            WIDTH 1.5
@@ -1381,33 +1114,6 @@ LAYER
     LABELITEM "name"
     CLASSITEM "type"
     CLASS
-        EXPRESSION /unclassified|residential|service|road|living_street/
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION "track"
-        STYLE
-            PATTERN 2 2 END
-            WIDTH 0.75
-            COLOR "#aaaaaa"
-        END
-    END
-    CLASS
-        EXPRESSION /tertiary/
-        STYLE
-           WIDTH 1
-           OUTLINEWIDTH 0.5
-           OUTLINECOLOR 100 100 100
-        END
-        STYLE
-            WIDTH 1
-            COLOR 250 250 245
-        END
-    END
-    CLASS
         EXPRESSION /secondary/
         STYLE
            WIDTH 1.5
@@ -1428,13 +1134,6 @@ LAYER
         END
         STYLE
             WIDTH 2
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION 'pedestrian'
-        STYLE
-            WIDTH 0.75
             COLOR 250 250 245
         END
     END
@@ -1624,31 +1323,6 @@ STYLE END
    POSITION auto
   END
  END
- CLASS
-STYLE END
-  EXPRESSION 'village'
-  LABEL
-   FONT sc
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 8
-   COLOR "#444444"
-   OUTLINECOLOR 255 255 255
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   PARTIALS FALSE
-   BUFFER 4
-   POSITION AUTO
-   STYLE
-       SYMBOL "citycircle"
-       COLOR 200 200 200
-       OUTLINECOLOR 0 0 0
-       SIZE 3
-   END
-  END
- END
 END
 LAYER
     GROUP "default"
@@ -1691,33 +1365,6 @@ LAYER
     DATA "geometry from (select osm_id,geometry,name,ref,type,tunnel,bridge from osm_new_roads order by z_order asc, st_length(geometry) asc) as foo using unique osm_id using srid=3857"
     LABELITEM "name"
     CLASSITEM "type"
-    CLASS
-        EXPRESSION /unclassified|residential|service|road|living_street/
-        STYLE
-            WIDTH 0.5
-            COLOR 250 250 245
-        END
-    END
-    CLASS
-        EXPRESSION "track"
-        STYLE
-            PATTERN 2 2 END
-            WIDTH 0.75
-            COLOR "#aaaaaa"
-        END
-    END
-    CLASS
-        EXPRESSION /tertiary/
-        STYLE
-           WIDTH 1.5
-           OUTLINEWIDTH 0.5
-           OUTLINECOLOR 100 100 100
-        END
-        STYLE
-            WIDTH 1.5
-            COLOR 250 250 245
-        END
-    END
     CLASS
         EXPRESSION /secondary/
         STYLE
@@ -1770,18 +1417,6 @@ LAYER
             ANGLE FOLLOW
             BUFFER 3
             ENCODING "UTF-8"
-        END
-    END
-    CLASS
-        EXPRESSION 'pedestrian'
-        STYLE
-           WIDTH 1
-           OUTLINEWIDTH 0.5
-           OUTLINECOLOR 100 100 100
-        END
-        STYLE
-            WIDTH 1
-            COLOR 250 250 245
         END
     END
     CLASS
@@ -1970,50 +1605,6 @@ STYLE END
    POSITION auto
   END
  END
- CLASS
-STYLE END
-  EXPRESSION 'village'
-  LABEL
-   FONT sc
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 9
-   COLOR 0 0 0
-   OUTLINECOLOR 255 255 255
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   PARTIALS FALSE
-   BUFFER 4
-   POSITION AUTO
-   STYLE
-       SYMBOL "citycircle"
-       COLOR 200 200 200
-       OUTLINECOLOR 0 0 0
-       SIZE 4
-   END
-  END
- END
- CLASS
-STYLE END
-  EXPRESSION /suburb|hamlet|locality/
-  LABEL
-   FONT sc
-   TYPE TRUETYPE
-   ENCODING "utf-8"
-   SIZE 8
-   COLOR "#444444"
-   OUTLINECOLOR 255 255 255
-   OUTLINEWIDTH 2
-   WRAP ' '
-   MAXLENGTH 8
-   ALIGN CENTER
-   BUFFER 4
-   PARTIALS FALSE
-   POSITION AUTO
-  END
- END
 END
 LAYER
     GROUP "default"
@@ -2113,6 +1704,14 @@ LAYER
             MINFEATURESIZE AUTO
             BUFFER 3
             ENCODING "UTF-8"
+        END
+    END
+    CLASS
+        EXPRESSION /footway00|path00/
+        STYLE
+            PATTERN 2 3 END
+            WIDTH 0
+            COLOR "#aaaaaa"
         END
     END
     CLASS
