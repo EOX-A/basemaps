@@ -44,6 +44,8 @@ END
 DEBUG _debug
 #if _debug > 0 || _layerdebug > 0
 CONFIG "MS_ERRORFILE" "stderr"
+CONFIG "PROJ_DEBUG" "ON"
+CONFIG "CPL_DEBUG" "ON"
 #endif
 
 CONFIG "PROJ_LIB" _proj_lib
