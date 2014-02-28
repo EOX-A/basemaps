@@ -46,7 +46,7 @@ set_default_name_type(LocalizedName(['name:en', 'int_name', 'name']))
 
 db_conf = Options(
     db='eox_osm',
-    host='10.0.2.15',
+    host='localhost',
     port=5432,
     user='eox_maps',
     password='osm',

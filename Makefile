@@ -2,17 +2,16 @@ UNAME := $(shell uname)
 
 ifeq ($(UNAME), Darwin)
 SED=sed -i ""
-CPP=cpp-4.2
 else
 SED=sed -i
-CPP=cpp
 endif
+
+CPP=gcc -E -x c
+#if the preprocessor fails for some reason, try replacing this with "cpp" on linux, or "cpp-4.2" on darwin (not available starting with mountain lion)
+
 
 OSM_PREFIX=osm_
 OSM_NAME_COLUMN=name
-#OSM_SRID=900913
-#OSM_UNITS=meters
-#OSM_EXTENT=-20000000 -20000000 20000000 20000000
 OSM_SRID=3857
 OSM_UNITS=meters
 OSM_DB_CONNECTION=host=127.0.0.1 dbname=eox_osm user=eox_maps password=osm port=5432
@@ -23,6 +22,7 @@ LAYERDEBUG=1
 STYLE=eox
 #can also use google or bing
 
+#template=osmbase.map
 template=eox.map
 
 includes=land.map landusage.map borders.map highways.map places.map \
