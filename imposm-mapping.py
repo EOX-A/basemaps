@@ -42,13 +42,13 @@ from imposm.mapping import (
 # imposm_linestring_max_length = 50
 
 
-# set_default_name_type(LocalizedName(['name:en', 'int_name', 'name']))
+set_default_name_type(LocalizedName(['name:en', 'int_name', 'name']))
 
 db_conf = Options(
-    # db='osm',
+    db='eox_osm',
     host='localhost',
     port=5432,
-    user='osm',
+    user='eox_maps',
     password='osm',
     sslmode='allow',
     prefix='osm_new_',
@@ -97,6 +97,39 @@ places = Points(
             'locality',
         ])),
         ('population', Integer()),
+    ),
+)
+
+natural_points = Points(
+    name = 'natural_points',
+    mapping = {
+        'natural': (
+            'stone',
+            'tree',
+            'spring',
+            'peak',
+            'saddle',
+            'volcano',
+        ),
+    },
+    fields = (
+        ('name', String()),
+        ('ele', Integer()),
+        ('status', String()),
+        ('type', String()),
+    ),
+)
+
+natural_lines = LineStrings(
+    name = 'natural_lines',
+    mapping = {
+        'natural': (
+            'arete',
+            'ridge',
+        ),
+    },
+    fields = (
+        ('name', String()),
     ),
 )
 
@@ -324,6 +357,11 @@ landusages = Polygons(
             'wood',
             'land',
             'scrub',
+            'beach',
+            'glacier',
+        ),
+        'geological': (
+            'moraine',
         ),
         'highway': (
             'pedestrian',

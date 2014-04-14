@@ -13,7 +13,6 @@ LAYER
  CLASSITEM 'type'
 #if _display_capitals == 1
  CLASS
-STYLE END
   EXPRESSION ('[capital]'='1')
   LABEL
    FONT _capital_font
@@ -47,7 +46,6 @@ STYLE END
 #endif
 #if _display_continents == 1
  CLASS
-STYLE END
   EXPRESSION 'continents'
   LABEL
    FONT _continent_font
@@ -65,7 +63,6 @@ STYLE END
 #endif
 #if _display_countries == 1
  CLASS
-STYLE END
   EXPRESSION 'country'
   LABEL
    FONT _country_font
@@ -86,7 +83,6 @@ STYLE END
 #endif
 #if _display_cities == 1
  CLASS
-STYLE END
   EXPRESSION 'city'
   LABEL
    FONT _city_font
@@ -115,7 +111,6 @@ STYLE END
 #endif
 #if _display_towns == 1
  CLASS
-STYLE END
   EXPRESSION 'town'
   LABEL
    FONT _town_font
@@ -145,7 +140,6 @@ STYLE END
 #endif
 #if _display_villages == 1
  CLASS
-STYLE END
   EXPRESSION 'village'
   LABEL
    FONT _village_font
@@ -174,7 +168,6 @@ STYLE END
 #endif
 #if _display_hamlets == 1
  CLASS
-STYLE END
   EXPRESSION /suburb|hamlet|locality/
   LABEL
    FONT _hamlet_font
