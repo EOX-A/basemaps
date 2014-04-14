@@ -429,3 +429,11 @@ waterareas_gen1 = GeneralizedTable(
     origin = waterareas,
     where = "ST_Area(geometry)>%f" % sqr_meter_to_mapunit(50000),
 )
+
+coastlines = Polygons(
+    name = 'coastlines',
+    mapping = {
+        'natural': (
+            'coastline',
+        )
+})
