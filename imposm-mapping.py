@@ -19,6 +19,7 @@ from imposm.mapping import (
     set_default_name_type, LocalizedName,
     WayZOrder, ZOrder, Direction,
     GeneralizedTable, UnionView,
+    FixInvalidPolygons,
     PseudoArea, meter_to_mapunit, sqr_meter_to_mapunit,
 )
 
@@ -145,19 +146,42 @@ admin = Polygons(
     ),
 )
 
-roads = Highway(
-    name = 'roads',
+motorways = Highway(
+    name = 'motorways',
     mapping = {
         'highway': (
             'motorway',
             'motorway_link',
             'trunk',
             'trunk_link',
+        ),
+    }
+)
+
+mainroads = Highway(
+    name = 'mainroads',
+    mapping = {
+        'highway': (
             'primary',
             'primary_link',
             'secondary',
             'secondary_link',
             'tertiary',
+    )}
+)
+
+buildings = Polygons(
+    name = 'buildings',
+    mapping = {
+        'building': (
+            '__any__',
+    )}
+)
+
+minorroads = Highway(
+    name = 'minorroads',
+    mapping = {
+        'highway': (
             'road',
             'path',
             'track',
@@ -268,7 +292,7 @@ transport_areas = Polygons(
             'station',
         ),
         'aeroway': (
-            'aerodome',
+            'aerodrome',
             'terminal',
             'helipad',
             'apron',
@@ -396,17 +420,16 @@ amenities = Points(
         ),
 })
 
-roads_gen1 = GeneralizedTable(
-    name = 'roads_gen1',
+motorways_gen1 = GeneralizedTable(
+    name = 'motorways_gen1',
     tolerance = meter_to_mapunit(50.0),
-    origin = roads,
-    where = "type in ('motorway','trunk','primary','secondary','tertiary')",
+    origin = motorways,
 )
-roads_gen0 = GeneralizedTable(
-    name = 'roads_gen0',
-    tolerance = meter_to_mapunit(200.0),
-    origin = roads_gen1,
-    where = "type in ('motorway','trunk','primary')",
+
+mainroads_gen1 = GeneralizedTable(
+    name = 'mainroads_gen1',
+    tolerance = meter_to_mapunit(50.0),
+    origin = mainroads,
 )
 
 railways_gen1 = GeneralizedTable(
@@ -414,6 +437,19 @@ railways_gen1 = GeneralizedTable(
     tolerance = meter_to_mapunit(50.0),
     origin = railways,
 )
+
+motorways_gen0 = GeneralizedTable(
+    name = 'motorways_gen0',
+    tolerance = meter_to_mapunit(200.0),
+    origin = motorways_gen1,
+)
+
+mainroads_gen0 = GeneralizedTable(
+    name = 'mainroads_gen0',
+    tolerance = meter_to_mapunit(200.0),
+    origin = mainroads_gen1,
+)
+
 railways_gen0 = GeneralizedTable(
     name = 'railways_gen0',
     tolerance = meter_to_mapunit(200.0),
@@ -431,14 +467,14 @@ landusages_gen0 = GeneralizedTable(
     name = 'landusages_gen0',
     tolerance = meter_to_mapunit(200.0),
     origin = landusages,
-    where = "type='forest' and ST_Area(geometry)>%f" % sqr_meter_to_mapunit(5000000),
+    where = "ST_Area(geometry)>%f" % sqr_meter_to_mapunit(500000),
 )
 
 landusages_gen1 = GeneralizedTable(
     name = 'landusages_gen1',
     tolerance = meter_to_mapunit(50.0),
     origin = landusages,
-    where = "ST_Area(geometry)>%f" % sqr_meter_to_mapunit(100000),
+    where = "ST_Area(geometry)>%f" % sqr_meter_to_mapunit(50000),
 )
 
 waterways_gen0 = GeneralizedTable(
@@ -467,6 +503,51 @@ waterareas_gen1 = GeneralizedTable(
     origin = waterareas,
     where = "ST_Area(geometry)>%f" % sqr_meter_to_mapunit(50000),
 )
+
+roads = UnionView(
+    name = 'roads',
+    fields = (
+        ('bridge', 0),
+        ('ref', None),
+        ('tunnel', 0),
+        ('oneway', 0),
+        ('z_order', 0),
+    ),
+    mappings = [motorways, mainroads, minorroads, railways],
+)
+
+roads_gen1 = UnionView(
+    name = 'roads_gen1',
+    fields = (
+        ('bridge', 0),
+        ('ref', None),
+        ('tunnel', 0),
+        ('oneway', 0),
+        ('z_order', 0),
+    ),
+    mappings = [railways_gen1, mainroads_gen1, motorways_gen1],
+)
+
+roads_gen0 = UnionView(
+    name = 'roads_gen0',
+    fields = (
+        ('bridge', 0),
+        ('ref', None),
+        ('tunnel', 0),
+        ('oneway', 0),
+        ('z_order', 0),
+    ),
+    mappings = [railways_gen0, mainroads_gen0, motorways_gen0],
+)
+
+landuse_gen1_valid = FixInvalidPolygons(
+    origin = landusages_gen1,
+)
+
+landuse_gen0_valid = FixInvalidPolygons(
+    origin = landusages_gen0,
+)
+
 
 coastlines = Polygons(
     name = 'coastlines',
