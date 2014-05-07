@@ -19,7 +19,6 @@ from imposm.mapping import (
     set_default_name_type, LocalizedName,
     WayZOrder, ZOrder, Direction,
     GeneralizedTable, UnionView,
-    FixInvalidPolygons,
     PseudoArea, meter_to_mapunit, sqr_meter_to_mapunit,
 )
 
@@ -539,15 +538,6 @@ roads_gen0 = UnionView(
     ),
     mappings = [railways_gen0, mainroads_gen0, motorways_gen0],
 )
-
-landuse_gen1_valid = FixInvalidPolygons(
-    origin = landusages_gen1,
-)
-
-landuse_gen0_valid = FixInvalidPolygons(
-    origin = landusages_gen0,
-)
-
 
 coastlines = Polygons(
     name = 'coastlines',
