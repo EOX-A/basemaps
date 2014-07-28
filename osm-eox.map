@@ -23,10 +23,8 @@ WEB
    IMAGEPATH "/tmp/ms_tmp/"
    IMAGEURL "/ms_tmp/"
 END
-DEBUG 1
+DEBUG 0
 CONFIG "MS_ERRORFILE" "stderr"
-CONFIG "PROJ_DEBUG" "ON"
-CONFIG "CPL_DEBUG" "ON"
 CONFIG "PROJ_LIB" "/usr/share/proj"
 PROJECTION
    "init=epsg:3857"
@@ -58,7 +56,7 @@ LAYER
  CLASS
   EXPRESSION 'continents'
   LABEL
-   FONT scb
+   FONT "scb,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 8
@@ -98,7 +96,7 @@ LAYER
  CLASS
   EXPRESSION 'continents'
   LABEL
-   FONT scb
+   FONT "scb,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 8
@@ -138,7 +136,7 @@ LAYER
  CLASS
   EXPRESSION 'continents'
   LABEL
-   FONT scb
+   FONT "scb,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 8
@@ -484,7 +482,7 @@ LAYER
  CLASS
   EXPRESSION 'city'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 9
@@ -607,7 +605,7 @@ LAYER
  CLASS
   EXPRESSION 'city'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 9
@@ -700,7 +698,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -738,7 +736,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -834,7 +832,7 @@ LAYER
  CLASS
   EXPRESSION 'city'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 10
@@ -921,7 +919,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -959,7 +957,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1055,7 +1053,7 @@ LAYER
  CLASS
   EXPRESSION 'city'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 11
@@ -1154,7 +1152,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1192,7 +1190,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1288,7 +1286,7 @@ LAYER
  CLASS
   EXPRESSION 'city'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 11
@@ -1306,7 +1304,7 @@ LAYER
  CLASS
   EXPRESSION 'town'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 10
@@ -1380,7 +1378,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1407,7 +1405,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1436,7 +1434,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1474,7 +1472,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1570,7 +1568,7 @@ LAYER
  CLASS
   EXPRESSION 'city'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 12
@@ -1588,7 +1586,7 @@ LAYER
  CLASS
   EXPRESSION 'town'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 10
@@ -1694,7 +1692,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1729,7 +1727,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1770,7 +1768,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -1808,7 +1806,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2111,7 +2109,7 @@ LAYER
  CLASS
   EXPRESSION 'city'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 12
@@ -2129,7 +2127,7 @@ LAYER
  CLASS
   EXPRESSION 'town'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 10
@@ -2148,7 +2146,7 @@ LAYER
  CLASS
   EXPRESSION 'village'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 9
@@ -2166,7 +2164,7 @@ LAYER
  CLASS
   EXPRESSION /suburb|hamlet|locality/
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 8
@@ -2239,7 +2237,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2262,7 +2260,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2289,7 +2287,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2316,7 +2314,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2351,7 +2349,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2378,7 +2376,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2407,7 +2405,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2445,7 +2443,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2748,7 +2746,7 @@ LAYER
  CLASS
   EXPRESSION 'city'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 13
@@ -2766,7 +2764,7 @@ LAYER
  CLASS
   EXPRESSION 'town'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 11
@@ -2785,7 +2783,7 @@ LAYER
  CLASS
   EXPRESSION 'village'
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 10
@@ -2803,7 +2801,7 @@ LAYER
  CLASS
   EXPRESSION /suburb|hamlet|locality/
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 9
@@ -2876,7 +2874,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2899,7 +2897,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2926,7 +2924,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2953,7 +2951,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -2988,7 +2986,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3015,7 +3013,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3044,7 +3042,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3082,7 +3080,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3385,7 +3383,7 @@ LAYER
  CLASS
   EXPRESSION /suburb|hamlet|locality/
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 9
@@ -3458,7 +3456,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3481,7 +3479,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3508,7 +3506,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3535,7 +3533,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3570,7 +3568,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3597,7 +3595,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3626,7 +3624,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3664,7 +3662,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -3967,7 +3965,7 @@ LAYER
  CLASS
   EXPRESSION /suburb|hamlet|locality/
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 9
@@ -4040,7 +4038,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -4063,7 +4061,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -4090,7 +4088,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -4117,7 +4115,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -4152,7 +4150,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -4179,7 +4177,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT sc
+            FONT "sc,default"
             SIZE 8
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -4208,7 +4206,7 @@ LAYER
             TYPE TRUETYPE
             PARTIALS FALSE
             PRIORITY 1
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -4246,7 +4244,7 @@ LAYER
         LABEL
             TYPE TRUETYPE
             PARTIALS FALSE
-            FONT scb
+            FONT "scb,default"
             SIZE 9
             MINDISTANCE 200
             REPEATDISTANCE 400
@@ -4549,7 +4547,7 @@ LAYER
  CLASS
   EXPRESSION /suburb|hamlet|locality/
   LABEL
-   FONT sc
+   FONT "sc,default"
    TYPE TRUETYPE
    ENCODING "utf-8"
    SIZE 9
